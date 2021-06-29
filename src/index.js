@@ -150,7 +150,7 @@ class Game extends React.Component {
     const current = history[history.length - 1];
     const squares = current.squares.slice();
     const historyLocation = this.state.historyLocation.slice(0, this.state.stepNumber + 1);
-    // const currentLocation = historyLocation[history.length - 1]; 
+
     const location_x = Math.floor(i / 3);
     const location_y = i % 3;
     
@@ -186,12 +186,12 @@ class Game extends React.Component {
     const win = calculateWinner(current.squares);
     let winner = null
     let winLines = null
-    // console.log(win)
+
     if (win) {
       winner = win.squares
       winLines = win.lines
     }
-    // console.log(winner)
+
     const moves = history.map((step, move) => {
       const desc = move ?
         'Go to move #'+ move + ' ('+ historyLocation[move].x+', '+ historyLocation[move].y +')':
